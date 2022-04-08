@@ -1,0 +1,31 @@
+server:
+  port: 80
+  error:
+    include-message: always
+spring:
+  datasource:
+    driver-class-name: org.postgresql.Driver
+    password: '0706'
+    username: 'postgres'
+    url: 'jdbc:postgresql://localhost:5432/book_exam'
+  jpa:
+    hibernate:
+      ddl-auto: create
+    show-sql: true
+  sql:
+    init:
+      mode: always
+  jackson:
+    serialization:
+      FAIL_ON_EMPTY_BEANS: false
+
+  security:
+    oauth2:
+      client:
+        registration:
+          google:
+            clientId: YOUR_GOOGLE_CLIENT_ID
+            clientSecret: YOUR_GOOGLE_CLIENT_SECRET
+            scope:
+              - email
+              - profile
